@@ -57,9 +57,25 @@ function Squares() {
         setSq(s => s.map((square, i) => i < 5 ? { ...square, show: true } : { ...square, show: false }));
     }
 
+    const [srt, setSort] = useState(1);
+    const sort2 = () => {
+        setSq(s => [...s].sort((a, b) => srt * (a.number - b.number)));
+        setSort(s => s * -1);//vienas paspaudimas 1, o kitas paspaudimas -1
+    }
+
+    //  const sort2 = () => {
+    //     sort>0 ? sort09() : sort90(); //sitoj vietoj reiketu prie useState paduoti reiksme(true)
+    //     setSort(s=>!s);
+    //  }
+    //  const sort2 = () => {
+    //     sort>0 ? sort() : sort1();
+    //     setSort(s=s*-1);
+    //  }
+
+
     return (
         <>
-            <h1>{selected} STATE {sq.filter(s => s.number < 300).length}</h1>
+            <h1 style={{ color: randC() }}>{selected} STATE {sq.filter(s => s.number < 300).length}</h1>
             <div className="container">
                 {
                     sq.map((n, i) => n.show ? <div style={
@@ -79,6 +95,7 @@ function Squares() {
                 <button onClick={sortColored}>Show Colored</button>
                 <button onClick={undo}>Grazina paskutini istrinta el-ta</button>
                 <button onClick={pirmElement}>Pirmi 5 el-tai</button>
+                <button onClick={sort2}>Sort i abi puses</button>
 
             </div>
         </>
