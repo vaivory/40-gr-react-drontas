@@ -4,7 +4,8 @@ function Text() {
 
     const [text, setText] = useState('');
     const [color, setColor] = useState('#7caa0c');
-    const [range, setRange] = useState('0'); //kadangi naudojam padStart tai jis veikia tik su stringais, todel pradine reiksme paduodam stringa '0'
+    // const [range, setRange] = useState('0'); //kadangi naudojam padStart tai jis veikia tik su stringais, todel pradine reiksme paduodam stringa '0'
+    const [range, setRange] = useState(0); //kadangi naudojam padStart tai jis veikia tik su stringais, todel pradine reiksme paduodam stringa '0'
 
     const control = e => {
         // Number(e.target.value) && setText(e.target.value);
@@ -16,10 +17,10 @@ function Text() {
     }
 
     const rangeControl = e => {
-        setRange(e.target.value);
+        setRange(parseInt(e.target.value));
     }
 
-    const [textNow, setTextNow] = useState('');
+    const [textNow, setTextNow] = useState('***');
 
 
     return (
@@ -28,7 +29,7 @@ function Text() {
             <div className="form-container">
                 <h2>TEXT: {textNow}</h2>
                 <input type="text" onChange={control} value={text} ></input>
-                <button style={{ marginTop: '10px' }} onClick={() => setTextNow(text)}>Text Now</button>
+                <button style={{ marginTop: '10px' }} onClick={() => setTextNow(text || '***')}>Text Now</button>
             </div>
             <div className="form-container">
                 <h2 style={{ color }}>COLOR</h2>
@@ -36,8 +37,10 @@ function Text() {
                 <button style={{ margin: '10px' }} onClick={() => setColor('#ff0000')} >Raudona</button>
             </div>
             <div className="form-container">
-                <h2>Range: {range.padStart(2, 0)}</h2>
-                <input type="range" onChange={rangeControl} value={range} min="0" max="11"></input>
+                <h2>RANGE: {('' + range).padStart(3, 0)}</h2>
+                <input type="range" onChange={rangeControl} value={range} ></input>
+                <button style={{ marginTop: '10px' }} onClick={() => setRange(s => Math.min(100, s + 10))}>Plus</button>
+                <button style={{ marginTop: '10px' }} onClick={() => setRange(s => Math.max(0, s - 10))}>Minus</button>
             </div>
         </>
     )
