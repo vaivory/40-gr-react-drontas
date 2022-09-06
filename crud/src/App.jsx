@@ -2,7 +2,13 @@ import './App.scss';
 
 function App() {
   return (
-   <div>Veikia</div>
+    <div>
+      <button>1 mygtukas</button>
+      <button className='blue'>2 mygtukas</button>
+      <button className='red'>3 mygtukas</button>
+      <button className='green'>4 mygtukas</button>
+
+    </div>
   );
 }
 
