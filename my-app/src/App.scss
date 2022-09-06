@@ -137,3 +137,102 @@ button {
     font-family: 'Courier New', Courier, monospace;
   }
 }
+
+select {
+  font-size: 28px;
+  padding: 5px;
+  border: none;
+  outline: none;
+  background-color: white;
+  font-weight: bold;
+  color: black;
+  font-family: 'Courier New', Courier, monospace;
+  button {
+    margin-top: 10px;
+}
+}
+
+input[type=checkbox] {
+  display: none;
+}
+
+.kv {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: coral;
+  margin: 10px;
+}
+
+.ap {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: coral;
+  margin: 10px;
+  border-radius: 50px;
+}
+
+.containerBin {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+  width: 230px;
+  border: 3px dashed skyblue;
+  margin: 20px;
+  padding: 9px;
+
+  div {
+      width: 200px;
+      height: 200px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: white;
+      border: 1px solid white;
+      margin: 5px 0;
+  }
+}
+
+.layout-main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+.layout-left {
+  width: 40%;
+  height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  border: 3px solid gray;
+  input {
+      margin-top: 10px;
+  }
+}
+
+.layout-right {
+  width: 60%;
+  min-height: 90vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid gray;
+}
+}
+
+.star {
+  margin: 20px;
+  padding: 20px;
+  border: 3px dotted crimson;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: skyblue;
+  font-size: 30px;
+}
